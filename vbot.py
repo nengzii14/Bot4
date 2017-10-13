@@ -237,37 +237,21 @@ def SEND_MESSAGE(op):
                         sendMessage(msg.to, ""+contact.displayName+" maapin say 􀜁􀅔Har Har􏿿")
                     else:
                         sendMessage(msg.to,"salah goblog 􀜁􀅔Har Har􏿿")
-		if "info" in msg.text:
-                    if msg.contentType == 0:
-		        _name0 = msg.text.replace("info ","")
-                        _name1 = _name0.lstrip()
-                        _name2 = _name1.replace("@","")
-                        _name3 = _name2.rstrip()
-		        _linedev = _name3
-                        client.sendMessage(msg.to,msg.contentMetadata["mid"])
-                        if 'displayName' in msg.contentMetadata:
-			    contact = msg.contentMetadata.index(_linedev)
-                            contact = client.getContact(msg.contentMetadata["mid"])
-                            try:
-                                cu = client.channel.getCover(msg.contentMetadata["mid"])
-                            except:
-                                cu = ""
-                            client.sendMessage(msg.to,"[Nama Profil]:\n" + msg.contentMetadata["displayName"] + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(cu))
-                        else:
-                            contact = client.getContact(msg.contentMetadata["mid"])
-                            try:
-                                cu = client.channel.getCover(msg.contentMetadata["mid"])
-                            except:
-                                cu = ""
-                            client.sendMessage(msg.to,"[Nama Profil]:\n" + contact.displayName + "\n[Id Profil]:\n" + msg.contentMetadata["mid"] + "\n[Bio]:\n" + contact.statusMessage + "\n[Foto Profil]:\nhttp://dl.profile.line-cdn.net/" + contact.pictureStatus + "\n[Header Profil]:\n" + str(cu))
-                if msg.text == "cancel":
+		if msg.text == "cancel":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
                         sendMessage(op.message.to, "Kagak ada yang diinv anjir 􀜁􀅔Har Har􏿿 apaan yang mau dicancel coba 􀜁􀅔Har Har􏿿")
                     else:
                         gInviMids = [contact.mid for contact in group.invitee]
                         client.cancelGroupInvitation(msg.to, gInviMids)
-                        sendMessage(msg.to, str(len(group.invitee)) + " Yang udah dicancel yak")		
+                        sendMessage(msg.to, str(len(group.invitee)) + " Yang udah dicancel yak")	
+		if "rename:" in msg.text:
+                    string = msg.text.replace("rename ","")
+                    if len(string.decode('utf-8')) <= 20:
+                        profile_B = client.getProfile()
+                        profile_B.displayName = string
+                        client.updateProfile(profile_B)
+                        client.sendMessage(msg.to,"name " + string + " done")
 		if msg.text == "Mulai":
                     print "Cleaning Member....."
                     _name = msg.text.replace("Mulai","")
