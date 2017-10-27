@@ -146,7 +146,7 @@ def SEND_MESSAGE(op):
                     else: md += "\nJumlah Member : " + str(len(group.members)) + " Orang\nUndangan Yang Belum Diterima : " + str(len(group.invitee)) + " Orang"
                     sendMessage(msg.to,md)
 		if msg.text == "help":
-		            sendMessage(msg.to,"๑۞๑,¸¸,ø¤º°`°๑۩ ✎โหน่ง รับติดบอท ๑۩ ,¸¸,ø¤º°`°๑۞๑ \n--------------------------------------------------\nBamzky Botz Help: \n\n[Command :] \n[seţ] \n[siďer] \n[ʍe] \n[ʍid] \n[ǥid] \n[ǥinfo] \n[ţime] \n[þuka] \n[ţutup] \n[µrl] \n[ȿpeed] \n[μp] \n[ţagall] \n[ȼancel] \n[Ğn 「Nama」] \n[ɨnvite:「By Mid」 \n[ȿhow:「By Mid」 \n\n[Command Kicker:] \n[ɲk「By Tag」] \n[мulai] \n[µni] \n\nBased on : Vodka \nLink : http://github.com/merkremont/LineVodka \nSupport By : Line Developers \nModding By : ✎โหน่ง รับติดบอทSiri  \n--------------------------------------------------\n๑۞๑,¸¸,ø¤º°`°๑۩ ✎โหน่ง รับติดบอท ๑۩ ,¸¸,ø¤º°`°๑۞๑")
+		            sendMessage(msg.to,"๑۞๑,¸¸,ø¤º°`°๑۩ ✎โหน่ง รับติดบอท ๑۩ ,¸¸,ø¤º°`°๑۞๑ \n--------------------------------------------------\nBamzky Botz Help: \n\n[Command :] \n[seţ] \n[siďer] \n[ʍe] \n[ʍid] \n[ǥid] \n[ǥinfo] \n[ţime] \n[þuka] \n[ţutup] \n[µrl] \n[ȿpeed] \n[μp] \n[ţagall] \n[ȼancel] \n[Ğn 「Nama」] \n[ɨnvite:「By Mid」 \n[ȿhow:「By Mid」 \n\n[Command Kicker:] \n[ɲk「By Tag」] \n[мulai] \n[µni] \nสนใจ lineID:nanahala14541\nQR: http://line.me/ti/p/TkvIO9GfIl \nModding By : ✎โหน่ง รับติดบอทSiri  \n--------------------------------------------------\n๑۞๑,¸¸,ø¤º°`°๑۩ ✎โหน่ง รับติดบอท ๑۩ ,¸¸,ø¤º°`°๑۞๑")
                 if "Gn " in msg.text:
 		    if msg.toType == 2:
 			X = client.getGroup(msg.to)
