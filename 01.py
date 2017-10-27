@@ -197,7 +197,7 @@ def SEND_MESSAGE(op):
                         contact = client.getContact(Mids[kazu])
                         sendMessage(msg.to, ""+contact.displayName+" maapin say 􀜁􀅔Har Har􏿿")
                     else:
-                        sendMessage(msg.to,"salah goblog 􀜁􀅔Har Har􏿿")
+                        sendMessage(msg.to,"บริการดีพร้อมดูแล􀜁􀅔Har Har􏿿")
 		if msg.text == ".ยกเลิก":
                     group = client.getGroup(msg.to)
                     if group.invitee is None:
