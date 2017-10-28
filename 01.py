@@ -51,16 +51,6 @@ def NOTIFIED_ADD_CONTACT(op):
 
 tracer.addOpInterrupt(5,NOTIFIED_ADD_CONTACT)
 
-def NOTIFIED_KICKOUT_FROM_GROUP(op):
-    try:
-        sendMessage(op.param1, client.getContact(op.param3).displayName + " ")
-    except Exception as e:
-        print e
-        print ("\n\nNOTIFIED_KICKOUT_FROM_GROUP\n\n")
-        return
-
-tracer.addOpInterrupt(19,NOTIFIED_KICKOUT_FROM_GROUP)
-
 
 def CANCEL_INVITATION_GROUP(op):
     try:
